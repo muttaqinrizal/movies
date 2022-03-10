@@ -16,7 +16,6 @@ export default function Media() {
             userPreferred
           }
           description
-          reviews
         }
       }
     }
