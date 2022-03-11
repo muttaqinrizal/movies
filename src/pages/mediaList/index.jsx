@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
+import NavBar from "../../components/navbar";
 import ErrorMessage from "../../helper/errorMessage";
 import Loading from "../../helper/loading";
 
@@ -29,7 +30,7 @@ export default function MediaList() {
   if (error) return <ErrorMessage error={error} />;
   return (
     <div className="container mx-auto flex flex-col text-center">
-      <h1 className="font-bold">Media</h1>
+      <NavBar currentPage="Media" />
       {data.Page.mediaList.map((res) => (
         <div key={res.id} className="border-solid border-2 rounded-sm m-4 p-2">
           <p>{res.media.title.english}</p>
