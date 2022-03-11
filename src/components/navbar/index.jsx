@@ -1,5 +1,4 @@
 import { AppBar } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRounded";
 import { Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
@@ -16,7 +15,7 @@ export default function NavBar({ currentPage }) {
           </IconButton>
         </Grid>
         <Grid item xs={10}>
-          <Typography className="text-xl">{currentPage}</Typography>
+          <Typography className="text-center">{currentPage}</Typography>
         </Grid>
       </Grid>
     </AppBar>

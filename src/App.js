@@ -4,7 +4,8 @@ import Layout from "./components/layout";
 import Genre from "./pages/genre";
 import Home from "./pages/home";
 import Media from "./pages/media";
-import MediaList from "./pages/mediaList";
+import Movies from "./pages/movies";
+import MoviesDetail from "./pages/moviesDetail";
 import User from "./pages/user";
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
           <Route path="/genre" element={<Genre />} />
           <Route path="/user" element={<User />} />
           <Route path="/media" exact element={<Media />} />
-          <Route path="/media-list" element={<MediaList />} />
+          <Route path="/movies" exact element={<Movies />} />
+          <Route path="/movies/:id" element={<MoviesDetail />} />
         </Routes>
       </BrowserRouter>
     </Layout>

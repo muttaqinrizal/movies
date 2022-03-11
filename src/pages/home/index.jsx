@@ -6,12 +6,12 @@ export default function Home() {
   const [value, setValue] = React.useState(0);
   return (
     <div className="pt-80">
-      <div className="text-center text-xl font-bold m-3">Media Playlist</div>
+      <div className="text-center text-xl font-bold m-3">Movies Playlist</div>
       <div className="flex justify-evenly">
-        <Link to="media-list">
+        <Link to="movies">
           <div className="border-2 p-4 text-center rounded-sm">
             <PermMedia />
-            <h1>Media List</h1>
+            <h1>Movies</h1>
           </div>
         </Link>
         <Link to="user">

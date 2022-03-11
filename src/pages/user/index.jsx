@@ -1,38 +1,30 @@
-import { gql, useLazyQuery, useQuery } from "@apollo/client";
+import { gql, useLazyQuery } from "@apollo/client";
 import React, { useEffect } from "react";
 import ErrorMessage from "../../helper/errorMessage";
 import Loading from "../../helper/loading";
 import NavBar from "../../components/navbar";
-import {
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  Input,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
-import { Cancel } from "@mui/icons-material";
+import { Button, Grid, Input } from "@material-ui/core";
 
-export default function User() {
-  const USER = gql`
-    query ($filter: String) {
-      Page(perPage: 100) {
-        users(sort: ID, search: $filter) {
-          id
-          name
-        }
+const USER = gql`
+  query ($filter: String) {
+    Page {
+      users(sort: ID, search: $filter) {
+        id
+        name
       }
     }
-  `;
+  }
+`;
+
+export default function User() {
+  const [searchFilter, setSearchFilter] = React.useState(null);
+  const [executeSearch, { data, loading, error }] = useLazyQuery(USER);
+
   useEffect(() => {
     executeSearch({
       variables: { filter: searchFilter },
     });
   }, []);
-
-  const [searchFilter, setSearchFilter] = React.useState(null);
-  const [executeSearch, { data, loading, error }] = useLazyQuery(USER);
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
