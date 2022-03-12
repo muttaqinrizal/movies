@@ -28,7 +28,7 @@ export default function Favorite() {
           <Link to={`/movies/${res.idMal}`} key={res.id}>
             <div className="h-40 mb-12">
               <CardMovie
-                title={res.title.english ? res.title.english : res.title.native}
+                title={res.title.english ? res.title.english : res.title.romaji}
                 image={res.coverImage.large}
               />
             </div>

@@ -26,6 +26,7 @@ export const MOVIES_HIGHLIGHT_FAVOURITES = gql`
         id
         bannerImage
         title {
+          romaji
           english
           native
         }
@@ -49,6 +50,7 @@ export const MOVIES_HIGHLIGHT_NEW = gql`
         id
         bannerImage
         title {
+          romaji
           english
           native
         }
@@ -72,6 +74,7 @@ export const MOVIES_HIGHLIGHT_TRENDING = gql`
         id
         bannerImage
         title {
+          romaji
           english
           native
         }
