@@ -1,31 +1,13 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import { Link } from "react-router-dom";
+import { QUERY_MOVIES } from "../../api";
 import NavBar from "../../components/navbar";
 import ErrorMessage from "../../helper/errorMessage";
 import Loading from "../../helper/loading";
 
-const MOVIES = gql`
-  {
-    Page {
-      media(sort: ID) {
-        id
-        bannerImage
-        title {
-          english
-          native
-        }
-        type
-        duration
-        bannerImage
-        idMal
-      }
-    }
-  }
-`;
-
 export default function Movies() {
-  const { data, loading, error } = useQuery(MOVIES);
+  const { data, loading, error } = useQuery(QUERY_MOVIES);
   if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
   return (

@@ -1,33 +1,14 @@
 import { gql, useLazyQuery, useQuery } from "@apollo/client";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { QUERY_MOVIES_DETAIL } from "../../api";
 import NavBar from "../../components/navbar";
 import ErrorMessage from "../../helper/errorMessage";
 import Loading from "../../helper/loading";
 
-const MOVIES_DETAIL = gql`
-  query ($id: Int) {
-    Media(idMal: $id) {
-      id
-      bannerImage
-      title {
-        romaji
-        english
-        native
-        userPreferred
-      }
-      type
-      duration
-      coverImage {
-        large
-      }
-    }
-  }
-`;
-
 export default function MoviesDetail() {
   const { id } = useParams();
-  const { data, loading, error } = useQuery(MOVIES_DETAIL, {
+  const { data, loading, error } = useQuery(QUERY_MOVIES_DETAIL, {
     variables: { id },
   });
 
