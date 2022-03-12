@@ -1,25 +1,24 @@
-import { PermMedia, Person } from "@mui/icons-material";
+import { useQuery } from "@apollo/client";
 import React from "react";
 import { Link } from "react-router-dom";
+import { QUERY_MOVIES_HIGHLIGHT } from "../../query";
+import NavBar from "../../components/navbar";
+import ErrorMessage from "../../helper/errorMessage";
+import Loading from "../../helper/loading";
+import CardMovie from "./components/cardMovie";
+import Trending from "./components/trending";
+import Favorite from "./components/favorite";
+import NewRelease from "./components/new";
 
 export default function Home() {
-  const [value, setValue] = React.useState(0);
   return (
-    <div className="pt-80">
-      <div className="text-center text-xl font-bold m-3">Movies Playlist</div>
-      <div className="flex justify-evenly">
-        <Link to="movies">
-          <div className="border-2 p-4 text-center rounded-sm">
-            <PermMedia />
-            <h1>Movies</h1>
-          </div>
-        </Link>
-        <Link to="user">
-          <div className="border-2 px-8 py-4 text-center rounded-sm">
-            <Person />
-            <h1>Users</h1>
-          </div>
-        </Link>
+    <div className="container mx-auto ">
+      <NavBar currentPage="HOME" />
+      {/* trending */}
+      <div className="flex flex-col">
+        <NewRelease />
+        <Trending />
+        <Favorite />
       </div>
     </div>
   );
