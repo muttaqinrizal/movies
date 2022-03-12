@@ -1,7 +1,7 @@
 import { gql, useLazyQuery, useQuery } from "@apollo/client";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { QUERY_MOVIES_DETAIL } from "../../api";
+import { QUERY_MOVIES_DETAIL } from "../../query";
 import NavBar from "../../components/navbar";
 import ErrorMessage from "../../helper/errorMessage";
 import Loading from "../../helper/loading";

@@ -4,7 +4,7 @@ import ErrorMessage from "../../helper/errorMessage";
 import Loading from "../../helper/loading";
 import NavBar from "../../components/navbar";
 import { Button, Grid, Input } from "@material-ui/core";
-import { QUERY_USER } from "../../api";
+import { QUERY_USER } from "../../query";
 
 export default function User() {
   const [searchFilter, setSearchFilter] = React.useState(null);
