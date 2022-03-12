@@ -33,6 +33,7 @@ export default function User() {
         </Grid>
         <Grid item xs={2}>
           <Button
+            color="secondary"
             onClick={() =>
               executeSearch({
                 variables: { filter: searchFilter },

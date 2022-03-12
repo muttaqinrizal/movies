@@ -19,13 +19,13 @@ export default function Favorite() {
     <div className="my-2">
       <div className="flex justify-between m-2">
         <div className="font-bold">FAVOURITES NOW</div>
-        <Link to="user">
-          <div>View All</div>
+        <Link to="movies">
+          <div className="text-semibold text-blue-600">View All</div>
         </Link>
       </div>
       <div className="flex justify-around flex-wrap">
         {data.Page.media.map((res) => (
-          <Link to={`/movies/${res.idMal}`} key={res.id}>
+          <Link to={`/movies/${res.id}`} key={res.id}>
             <div className="h-40 mb-12">
               <CardMovie
                 title={res.title.english ? res.title.english : res.title.romaji}

@@ -14,9 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/genre" element={<Genre />} />
           <Route path="/user" element={<User />} />
-          <Route path="/media" exact element={<Media />} />
           <Route path="/movies" exact element={<Movies />} />
           <Route path="/movies/:id" element={<MoviesDetail />} />
         </Routes>

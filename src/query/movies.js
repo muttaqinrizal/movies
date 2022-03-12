@@ -3,16 +3,21 @@ import { gql } from "@apollo/client";
 export const MOVIES = gql`
   {
     Page {
-      media(sort: ID) {
+      media(sort: START_DATE) {
         id
         bannerImage
         title {
+          romaji
           english
           native
         }
         type
         duration
-        bannerImage
+        coverImage {
+          extraLarge
+          large
+          medium
+        }
         idMal
       }
     }
@@ -93,7 +98,7 @@ export const MOVIES_HIGHLIGHT_TRENDING = gql`
 
 export const MOVIES_DETAIL = gql`
   query ($id: Int) {
-    Media(idMal: $id) {
+    Media(id: $id) {
       id
       bannerImage
       title {
@@ -107,10 +112,17 @@ export const MOVIES_DETAIL = gql`
       averageScore
       meanScore
       description
+      status
+      episodes
+      siteUrl
       startDate {
         year
         month
         day
+      }
+      tags {
+        id
+        name
       }
       coverImage {
         extraLarge
