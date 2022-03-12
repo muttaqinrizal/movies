@@ -1,4 +1,4 @@
-import { gql, useLazyQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import React, { useEffect } from "react";
 import ErrorMessage from "../../helper/errorMessage";
 import Loading from "../../helper/loading";
