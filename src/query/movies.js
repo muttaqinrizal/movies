@@ -32,8 +32,16 @@ export const MOVIES_DETAIL = gql`
       }
       type
       duration
+      averageScore
+      meanScore
+      description
+      startDate {
+        year
+        month
+        day
+      }
       coverImage {
-        large
+        extraLarge
       }
     }
   }

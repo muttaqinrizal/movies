@@ -5,7 +5,7 @@ import React from "react";
 const useStyles = makeStyles((theme) => ({
   layout: {
     backgroundColor: theme.palette.text.white,
-    width: 500,
+    width: 640,
     margin: "auto",
     minHeight: "100vh",
     paddingBottom: 15,
